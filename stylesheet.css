@@ -44,3 +44,12 @@ body, html { overflow-x: hidden; }
     position: absolute;
     top: -9999px;
 }
+.nav-header{
+  position: fixed;
+}
+#header {
+margin-top: 50px;
+}
+#trend{
+  padding-top: 50px;
+}
