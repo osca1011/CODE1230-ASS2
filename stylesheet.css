@@ -1,0 +1,42 @@
+body,h1,p {font-family: "Verdana", sans-serif;}
+body, html { overflow-x: hidden; }
+
+.page-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 50px;
+
+}
+.map-container{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+.chart-container{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+ }
+
+ .detail{
+
+ }
+
+ .header{
+   margin-bottom: 2em;
+ }
+  .w3-top{
+    position: relative;
+  }
+
+  .fullscreen{
+    height: 90vh;
+  }
