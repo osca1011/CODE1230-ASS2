@@ -26,9 +26,7 @@ body, html { overflow-x: hidden; }
   width: 100%;
  }
 
- .detail{
 
- }
 
  .header{
    margin-bottom: 2em;
@@ -40,3 +38,9 @@ body, html { overflow-x: hidden; }
   .fullscreen{
     height: 90vh;
   }
+
+.invisible {
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
+}
