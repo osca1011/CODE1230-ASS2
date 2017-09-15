@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<title>Data Analysis</title>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="w3.css" rel="stylesheet">
+<link href="leaflet.css" type="text/css" rel=stylesheet>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
+<script src="jquery-3.2.1.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="stylesheet.css" type="text/css" rel=stylesheet>
+</head>
+
+<body>
+
+<!--Navigation Bar-->
+<section id='header'>
+  <div class="nav-header w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card-2" id="myNavbar">
+      <a href="homepage.html" class="w3-bar-item w3-button"><b>CODE1230</b> URBAN DATA</a>
+      <div class="w3-right">
+        <a href="#mapbox" class="w3-bar-item w3-button">Map</a>
+        <a id='chart-load' href="#trend" class="w3-bar-item w3-button">Trend</a>
+        <a id='pie-load' href="#statistics" class="w3-bar-item w3-button">Statistics</a>
+        <a href="#invest" class="w3-bar-item w3-button">Investigation</a>
+        <a href="#proposal" class="w3-bar-item w3-button">Proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Data Description -->
+<div class='w3-center w3-padding-16'>
+  <h1>High School Graduates by Age and Gender</h1>
+</div>
+<div class='texthead text'>
+  <p>Plotting graduation data onto a map allows us to see different trends and patterns of education in NSW,
+  which ultimately allows us to see problems and address them. Most of our graphs and data considers different
+  variables such as gender, age, year group and other factors. We tried proving the difference in success amongst
+  years relative to graduation rate, affectability of private schools, and success of male’s vs females and other
+  interesting data trends. Our data is taken of the Australian Bureau of Statistics, in-cooperated with other sources,
+  and worked in QGIS.</p>
+</div>
+
+<!-- Getting a map up -->
+<div id='mapbox' class='map-container fade' >
+  <div class='row'>
+    <h1 class='w3-border-bottom w3-border-light-grey w3-padding-32'>Map</h1>
+    <div class='col-sm-8'>
+
+      <div id='map'></div>
+    </div>
+    <div class='col-sm-4 text'>
+       <p>Sydney is very dense in variety of education as seen by how thick the colouring is,
+         juxtaposed to the grey base map. Where dark red means a higher amount of graduates and blue means lesser,
+         we can observe there are a few outliers around Garigal national park and Manly,
+         which are mostly explainable due to the lack of schools in those areas.</p>
+
+       <br><b>Trend</b></br>
+         <p>It is interesting to observe that as you go closer to Sydney’s city, the compactness of graduates seems to increase and become denser,
+         whereas as you go further away, bluer spots appear symbolizing less graduates, besides around the Rouse hill area where there is just large red slabs,
+         which is interesting as they are so close to national parks and very away from the city urbanism. </p>
+    </div>
+  </div>
+</div>
+
+
+<!--Trend-->
+<div id='trend' class='chart-container fade'>
+  <div class='row'>
+    <h1 class='w3-border-bottom w3-border-light-grey w3-padding-16'>Trend</h1>
+    <div class='col-sm-8'>
+      <div id='line'></div>
+    </div>
+  <div class='col-sm-4 text'>
+      <p>This graph explores education over 8 years period.
+        The data takes different age group, ranging from 15 years to 85+ years
+        for both male and female. The data takes the highest percentage of year 12 graduates (from differnet age group)
+        from all the location in New South Wales.</p>
+        <br><b> Results </b></br>
+      </p>Observable from the graph, it is clear that there females have a higher amount of graduates initially.
+          However the steep and also steady decline over the new 2 years is quite significant.
+          Both results for males and females are fairly similar in trends where they both drop towards 2008-2009 but eventually begins inclining.
+          This data possibly expresses a successful change in the education system however, although it was effective for many years,
+          the lack of newer change ultimately caused the incline to drop, even though the incline was increasingly increasing.
+          Some could argue the increase of technology was to be complimented for the increase of graduates and ultimately the change in polarity of increase/ decrease.</p>
+    </div>
+  </div>
+</div>
+
+  <!--Video of Change in Trend -->
+<div id='#' class='chart-container fade'>
+
+    <div class='row'>
+      <div class='col-sm-4 text'>
+        <p>Throughout the decades it is very important to know the different in habits for both males and females as seen from the data.
+          These trends can be easily observable through the large spikes of sharp blues on the female maps that represents
+          high amounts of graduates, whilst the male are maps dominated with a lighter blue
+          (representing a mid-range amount of graduates)</p>
+          <br><b>Results</b></br>
+          <p>It shows that Males often have a lot of people to graduate from (explainable by the diverse amounts of schools in NSW for boys),
+          however, each location produces a either a constant or a lower than female amount of graduates.</p>
+
+          <br><p>Contrastingly females, although have lesser locations to graduate from, do graduate in large batches from each place.
+            Essentially, Males represent quantity, whilst females represents quality.
+
+
+
+      </div>
+    <div class='col-sm-8 text video'>
+        <video width=100% autoplay loop id="video">
+        <source src="sydney.mp4" type="video/mp4" />
+        </video>
+    </div>
+  </div>
+</div>
+
+  <!--Pie chart -->
+<div id='statistics' class='chart-container fade'>
+  <div class='row'>
+    <h1 class='w3-border-bottom w3-border-light-grey w3-padding-32'>Statistics</h1>
+    <div class="row content">
+      <div class="col-sm-4 w3-middle-right text">
+        <p>The pie graph displays the comparison of the total number of female and male graduates across the state in all age.
+          Interestingly,the NSW population of the male to female ratio is not that large of a difference.
+          There are currently 3 369 591 males and 3 404 658 females in NSW, providing the ratio of 1:1.
+          Hence, this pie chart can be conclusive that females have a higher success in education.</p>
+          <br><img src="ratio.png" width='75%' ><br>
+       </div>
+      <div class="col-sm-8 text">
+        <div id='pie' /></div>
+      </div>
+    </div>
+</div>
+</div>
+
+<!-- Investigation -->
+<div id='invest' class='map-container fade' >
+  <div class='row'>
+    <h1 class='w3-border-bottom w3-border-light-grey w3-padding-32'>Investigation</h1>
+    <div class='col-sm-8'>
+      <div id='map2'></div>
+        <div class="row">
+          <div class="col-sm-6 text" style="background-color:#DC381F;">Red = Female School</div>
+          <div class="col-sm-6 text" style="background-color:#F88158;">Orange = Male School</div>
+        </div>
+      </div>
+
+    <div class='col-sm-4 text video'>
+       <p>It was evident in the choropleth map that the high graduate rates are seen mostly in
+       North Sydney and the Sydney CBD region. We have decided to look into an investigation whether
+     the top 10 girls and boys school have an impact on graduation rates.</p>
+
+
+           <video width=100% autoplay loop id="video">
+           <source src="latte.mp4" type="video/mp4" />
+           </video>
+           <div class='w3-center'><i><font size="1.5">Latte Line</font></i></div>
+      <p>The Latte Line perfectly divides the dark blue and light blue choropleth where the dark blue represents
+        high graduate rate. We then further investigate whether the schools above the Latte Line has an effect on
+        graduation rate</p>
+     <br><b>Results</b></br>
+     <p>From the source <i>business insider</i>, all top 10 high schools are non-Government,
+       independent school with fee starting from $21 000. Majority of the schools are located
+       in North Sydney, Inner City and Inner West.</p>
+
+
+    </div>
+  </div>
+</div>
+
+<!-- Proposal -->
+<div id='proposal' class='chart-container fade' >
+  <div class='row'>
+    <h1 class='w3-border-bottom w3-border-light-grey w3-padding-32'>Proposal</h1>
+      <div class='col-sm-6 text'>
+      <h4><b>Conclusion</b></h4>
+      <p> The analysis of high school graduates rate by Age and Gender data has significantly alters our perspective
+    on the urban space of NSW, focusing on Sydney. We have explored the change in education over a decade through
+    different age group (from 15-85+ years). From the observation, there has certainly been a fluctuation in NSW
+    education with possible factors including the cancellation of School Certificate (completed in year 10),
+    not enough funding <i><a href="http://www.smh.com.au/national/education/why-is-australias-education-system-going-backwards-20161208-gt6van.html">
+      (Source: Sydney Morning Herald)</a></i>.</p>
+
+      <p>Furthermore, the gender analysis can be done through the comparision of male and female graduation rate. This correlates with the
+        ratio of male:female population in NSW.
+      </p>
+
+      <p>Our main focus investigation has drawn to the attention of the Latte line,
+        the notional line dividing Sydney's affluent north-east from the less affluent south-west.
+        Through identifying the top 10 high school in NSW for both male and female, the list has shown that non-Government schools
+        (private schools) are likely to be above the Latte line. From this observation, there is a clear correlation between
+        HSC results and location.</p>
+
+        <br><h4><b>Proposal</b></h4></br>
+        <p>From the visual map data, our current graduation layout stable for most areas.
+          However, for some areas such as the South West, their amount of graduates is lacking compare from the other locations.
+          This can be seen problematic as family in the South-West would have to travel, or migrate, to the North for better education,
+          which can potentially reduce the flexibility of lifestyle.</p>
+          <p>From the graphical analysis of the data, it is evident that in the previous 2 years we have begun decreasing once more in graduation rate
+            (both females and males) even though prior to this, we were on a steady increase.
+            This proposes that the education system needs to be modernised or modified, as that different locations are lacking schools to
+            cater enough students. </p>
+          </div>
+          <div class='col-sm-6 text' w3-left>
+          <p>On the positive side, it is good to see that there are more female graduates whilst also there being more female population,
+            hence representing that both male and female parties are traveling on par in graduates. </p>
+
+            <p>One change that could be beneficial, is the introduction of more female schools as they currently have low amounts of schools,
+              hence such high concentrations of graduates from singular locations, in other words,
+              giving them more freedom in choice in choosing schools. </p>
+
+            <p>Finally, from the investigation of locations of top 10 schools in NSW and where the latte line is,
+              it is clear to see that the locations of private schools are often where the highest amount of graduates are.
+              This means that private’s schools often have a large contribution to the success of the quantity of graduates.
+              Hence a good change to benefit NSW is to cleverly utilises the space to spread out and create more private schools
+              around the state, in hope that it would raise the average amount of graduates. </p>
+
+            <p>Regarding the context of different locations, it is understandable that the average income of families will vary
+              hence affecting the accessibility of enrolling into a private school. Hence the lowering of private school fees is a
+              very reasonable proposal to be changed and lightened.</p>
+            </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <script src="linegraph.js"></script>
+    <script src="piegraph.js"></script>
+    <script src="fade.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="leaflet.js"></script>
+    <!-- Dataset -->
+    <script src="male15_19.js"></script>
+    <script src="mapscript.js"></script>
+    <script src="markermap.js"></script>
+</body>
+</html>
