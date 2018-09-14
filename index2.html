@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Display a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+    <script src='./data.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiamstbGluIiwiYSI6ImNqbHFubWp0NDB2OTEza29ldGNxOWx5NzIifQ.m_4BN0Gn4zFIxpdlJgQ7-Q';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105,-33.813002], // starting position [lng, lat]
+    pitch:45,
+    bearing:-17.6,
+    zoom: 9 // starting zoom
+});
+map.on('load',
+function() {
+    map.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+            'fill-extrusion-color': {
+                'property': '2016Census_G37_NSW_POA_IA_DS_SemD_ro_tr_h_th',
+                "stops": [[0, 'white'], [50, 'orange']]
+            },
+            'fill-extrusion-height': {
+                'property': 'differen',
+                "stops": [[0.2, 0], [2, 30000]]
+            },
+            'fill-extrusion-opacity': 1
+        }
+    });
+});
+</script>
+
+</body>
+</html>

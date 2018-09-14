@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CODE1230 ASSIGNMENT2 
+</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
+<script src="js/jquery.min.js"></script>
+ <!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!--Custom Theme files-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</script>
+
+<!--start-smoth-scrolling-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+<!-- Map -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+	<script src='./js/data.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<!--header-->
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="logo">
+					<a href="index.html"></a>
+				</div>
+			<!--top-nav-->
+			 <nav class="top-nav">
+				
+						</nav>
+						<div class="clearfix"> </div>
+
+				<div class="clearfix"> </div>
+		</div>
+	</div>
+		<!--banner-->
+			<div class="banner" >
+				<div class="container" style='width:1100px; height: 250px;' >
+					<div class="col-xs-20">
+						<div class="banner-info">
+						 	<h1>difference between apartment and house
+</h1>
+<!-- 						 	<h2>z5210814 
+jianlun fu</h2> -->
+						
+
+						</div>
+					</div>
+			 	</div>
+			</div>
+		<!--Features-->
+		<div class="Features" id="feature">
+					
+			<div class="container">
+
+
+<div style="display:flex;justify-content:center">
+	<div id='map' style='width: 45%; height: 200px;margin-right: 20px'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiamstbGluIiwiYSI6ImNqbHFubWp0NDB2OTEza29ldGNxOWx5NzIifQ.m_4BN0Gn4zFIxpdlJgQ7-Q';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105,-33.813002], // starting position [lng, lat]
+    pitch:45,
+    bearing:-17.6,
+    zoom: 9 // starting zoom
+});
+map.on('load',
+function() {
+    map.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+            'fill-extrusion-color': {
+                'property': '2016Census_G37_NSW_POA_IA_DS_SemD_ro_tr_h_th',
+                "stops": [[0, 'white'], [50, 'orange']]
+            },
+            'fill-extrusion-height': {
+                'property': 'differen',
+                "stops": [[0.2, 0], [2, 30000]]
+            },
+            'fill-extrusion-opacity': 1
+        }
+    });
+});
+</script>
+
+<div id='map2' style='width: 45%; height: 200px;margin-left: 20px'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiamstbGluIiwiYSI6ImNqbHFubWp0NDB2OTEza29ldGNxOWx5NzIifQ.m_4BN0Gn4zFIxpdlJgQ7-Q';
+var map2 = new mapboxgl.Map({
+    container: 'map2', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105,-33.813002], // starting position [lng, lat]
+    pitch:45,
+    bearing:-17.6,
+    zoom: 9 // starting zoom
+});
+map2.on('load',
+function() {
+    map2.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+            'fill-extrusion-color': {
+                'property': '2016Census_G37_NSW_POA_IA_DS_Separate_house',
+                "stops": [[0, 'white'], [1000, '#ff36ae']]
+            },
+            'fill-extrusion-height': {
+                'property': 'difference',
+                "stops": [[0.2, 0], [50, 50000]]
+            },
+            'fill-extrusion-opacity': 1
+        }
+    });
+});
+</script>
+</div>
+</div>
+					
+
+
+			<div class="col-md-20 phone-text" style="width: 100vw;">
+					<p style="width: 80vw;margin:30px auto;text-align: center;">I am investigating the residential structure of 2016 in New South Wales. Among them, I chose the two main residences and houses.
+In this picture, it can be clearly seen that the coastal city apartment is much higher than the inland city, but from the comparison of the two figures, the number of coastal city houses is obviously higher than the apartment. In Wanaaring and Milparinka, it shows a very strange phenomenon. The difference between the number of houses and apartments in two similar areas is completely opposite. Through research, we can find that because the development of coastal cities is relatively early, limited by the technical limitations of housing construction at that time, the number of houses is greatly increased due to the increase in population. Approaching the West, the terrain began to change into a mountain. From the picture, it can be seen that the number of buildings near the mountain terrain is less, and the number of houses is decreasing, which is significantly lower than the apartment. From the data point of view, the number of houses is much larger than the apartment. The total number of houses is 1447605, and the number of apartments is 425123. Except for the number of coastal cities and houses, the other regions are complementary. Areas with more houses will be reduced.
+</p>
+			</div>
+
+</body>
+</html>
